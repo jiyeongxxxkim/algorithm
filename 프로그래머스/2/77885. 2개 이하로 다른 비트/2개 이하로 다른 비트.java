@@ -1,0 +1,17 @@
+class Solution {
+    public long[] solution(long[] numbers) {
+        long[] answer = new long[numbers.length];
+        
+        for(int i=0;i<numbers.length;i++){
+            long number = numbers[i];
+            
+            if(number%2==0)answer[i] = number+1;
+            else{
+                long lastZero = ~number & (number + 1); 
+                answer[i] = (number | lastZero) & ~(lastZero >> 1);
+            }
+        }
+        
+        return answer;
+    }
+}
