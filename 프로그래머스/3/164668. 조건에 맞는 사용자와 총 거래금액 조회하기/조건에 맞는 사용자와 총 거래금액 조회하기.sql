@@ -1,9 +1,20 @@
--- 코드를 입력하세요
-with user as (SELECT *, sum(price) as tprice
-from USED_GOODS_BOARD 
-where status='done'
-group by writer_id
-having sum(price)>=700000)
-select distinct i.user_id, i.nickname, u.tprice as total_sales
-from user as u join USED_GOODS_USER as i on u.writer_id=i.user_id
+
+
+select u.user_id as user_id, u.nickname as nickname, sum(b.price) as total_sales
+from used_goods_board as b join used_goods_user as u on b.writer_id=u.user_id
+where b.status = 'DONE'
+group by u.user_id
+having sum(b.price)>=700000
 order by total_sales asc
+
+
+
+
+
+
+
+
+
+
+
+
