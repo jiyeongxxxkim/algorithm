@@ -10,10 +10,21 @@
 # order by d.id asc;
 
 
+# select id, email, first_name, last_name
+# from developers as d
+# where (d.skill_code&(select sum(code) from skillcodes where name="C#" or name="Python"))>0
+# order by id asc;
+
 select id, email, first_name, last_name
-from developers as d
-where (d.skill_code&(select sum(code) from skillcodes where name="C#" or name="Python"))>0
+from developers 
+where skill_code&(select sum(code) from skillcodes where name in ('C#', 'Python'))>0
 order by id asc;
+
+
+
+
+
+
 
 
 
