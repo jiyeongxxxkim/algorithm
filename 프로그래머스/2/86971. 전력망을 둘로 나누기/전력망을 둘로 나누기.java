@@ -38,6 +38,7 @@ class Solution {
         for(int i=0;i<n-1;i++){
             visited = new boolean[n+1];
             // System.out.println("bfschk : "+bfs(3,4));
+            
             int a = wires[i][0];
             int b = wires[i][1];
             minus = Math.abs(n-(bfs(a,b)*2));
