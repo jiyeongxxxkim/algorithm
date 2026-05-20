@@ -1,13 +1,12 @@
 import java.util.*;
 class Solution {
-    static int[] nums;
-    static boolean[] visited;
-    static HashSet<Integer> hset;
-    static int[] resultlist;
-    static int len;
+    int[] nums;
+    boolean[] visited;
+    HashSet<Integer> hset;
+    int[] resultlist;
+    int len;
     public void dfs(int depth){
     
-        
         if(depth!=0){
             int result=0;
             for(int i=0;i<depth;i++){
