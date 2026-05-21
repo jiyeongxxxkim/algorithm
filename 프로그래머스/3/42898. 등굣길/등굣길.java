@@ -26,7 +26,6 @@ class Solution {
                 }
             }
         }
-        
         answer = map[n][m]%1_000_000_007;
         return answer;
     }
