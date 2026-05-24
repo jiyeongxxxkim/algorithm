@@ -25,11 +25,6 @@ class Solution {
             answer[0] = tmap.lastKey();
             answer[1] = tmap.firstKey();
         }
-        
-        
-        
-        
-        
         return answer;
     }
 }
