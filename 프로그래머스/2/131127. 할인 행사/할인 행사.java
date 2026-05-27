@@ -20,7 +20,7 @@ class Solution {
                     chk = false;
                 }
             }
-            // System.out.println(chk+"  "+i+"  ");
+            
             if(chk){
                 // System.out.println(i);
                 answer++;
