@@ -2,9 +2,7 @@ import java.util.*;
 class Solution {
     public int solution(int[] ingredient) {
         int answer = 0;
-        
-        ArrayList<Integer> arr= new ArrayList<>();
-
+        ArrayList<Integer> arr = new ArrayList<>();
         for(int in:ingredient){
             arr.add(in);
             if(arr.size()>=4){
