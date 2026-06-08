@@ -4,7 +4,6 @@ class Solution {
         int answer = 0;
         if (x == y) return 0;
         
-        // 방문 체크 및 연산 횟수 저장 (인덱스: 숫자, 값: 연산 횟수)
         int[] visited = new int[y + 1];
         Queue<Integer> q = new LinkedList<>();
         
