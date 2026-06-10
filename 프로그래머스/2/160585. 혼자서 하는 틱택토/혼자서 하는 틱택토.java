@@ -48,15 +48,12 @@ class Solution {
         if (counto < countx || counto > countx + 1) {
             return 0;
         }
-
         if (ticmap.getOrDefault(1, 0) > 0 && ticmap.getOrDefault(2, 0) > 0) {
             return 0;
         }
-
         if (ticmap.getOrDefault(1, 0) > 0 && counto == countx) {
             return 0;
         }
-
         if (ticmap.getOrDefault(2, 0) > 0 && counto == countx + 1) {
             return 0;
         }
