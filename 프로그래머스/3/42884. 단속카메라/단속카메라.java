@@ -13,7 +13,6 @@ class Solution {
                 camera = routes[i][1];
             }
         }
-        
         return count;
     }
 }
