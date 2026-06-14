@@ -15,7 +15,6 @@ class Solution {
             if(cur.equals(target)){
                 return;
             }
-
             for (int i = 0; i < words.length; i++) {
                 if(!visited[i]){
                     if (mathchk(cur, words[i])) {
