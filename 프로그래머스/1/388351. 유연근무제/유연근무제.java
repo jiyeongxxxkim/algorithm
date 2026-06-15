@@ -22,8 +22,6 @@ class Solution {
             if(chk)answer++;
         }
         
-        
-        
         return answer;
     }
 }
