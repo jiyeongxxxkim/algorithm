@@ -1,10 +1,10 @@
 # [level 2] 힌트 스테이지 - 468377 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/468377?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/468377) 
 
 ### 성능 요약
 
-메모리: 75.8 MB, 시간: 1.64 ms
+메모리: 76.8 MB, 시간: 2.47 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 06월 17일 23:59:20
+2026년 06월 30일 17:54:10
 
 ### 문제 설명
 

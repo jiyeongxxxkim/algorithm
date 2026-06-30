@@ -28,7 +28,6 @@ class Solution {
         if (nextCost >= minTotalCost) {
             return;
         }
-
         // 3. 종료 조건: 마지막 스테이지(n-1)에 도달한 경우
         if (stage == n - 1) {
             minTotalCost = Math.min(minTotalCost, nextCost);
