@@ -5,10 +5,6 @@ class Solution {
         // Map<String, Integer> wantmap = new HashMap<>();
         Map<String, Integer> dismap = new HashMap<>();
         
-        // for(int i=0;i<want.length;i++){
-        //     wantmap.put(want[i], number[i]);
-        // }
-        
         for(int i=0;i<10;i++){
             dismap.put(discount[i], dismap.getOrDefault(discount[i],0)+1);
         }
