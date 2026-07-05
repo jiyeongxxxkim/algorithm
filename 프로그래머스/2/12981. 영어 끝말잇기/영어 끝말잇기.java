@@ -12,6 +12,7 @@ class Solution {
                 index =1;
                 count++;
             } 
+            
             if(hset.contains(word)||(pre!=word.charAt(0))){
                 answer[0] = index;
                 answer[1] = count;
