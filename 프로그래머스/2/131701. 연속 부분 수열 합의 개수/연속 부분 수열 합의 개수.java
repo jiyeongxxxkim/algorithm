@@ -13,7 +13,7 @@ class Solution {
                 sum += twice[i+j];
                 hset.add(sum);
             }
-        }
+        } 
         answer = hset.size();
         return answer;
     }
