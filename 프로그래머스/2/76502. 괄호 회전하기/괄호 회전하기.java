@@ -26,7 +26,7 @@ class Solution {
         for(int i=0;i<len;i++){
             String chkstr = doubles.substring(i, i+len);
             if(istrue(chkstr))answer++;
-        }
+        } 
         
         return answer;
     }
