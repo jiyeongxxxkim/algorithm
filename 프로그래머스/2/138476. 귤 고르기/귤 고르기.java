@@ -10,9 +10,8 @@ class Solution {
         List<Integer> sortedCounts = hmap.values().stream()
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
-        
         int answer = 0;
-        int sum = 0;
+        int sum = 0; 
         for (int count : sortedCounts) {
             sum += count;
             answer++;
