@@ -1,63 +1,69 @@
 import java.util.*;
 class Solution {
-    int[][] maps_int;
     int n, m;
-    int[] dx = {1,0,-1,0};
-    int[] dy = {0,1,0,-1};
-    public int bfs(int i, int j){
-        Queue<int[]> q = new LinkedList<>();
-        int sum = 0;
+    ArrayList<Integer> area = new ArrayList<>();
+    boolean[][] visited;
+    int[][] maps_arr;
+    int bfs(int curx, int cury, int sum){
+        sum = maps_arr[curx][cury];
         
-        sum += maps_int[i][j];
-        maps_int[i][j] = 0;
-        q.add(new int[]{i, j});
+        int[] dx = {0,1,0,-1};
+        int[] dy = {1,0,-1,0};
         
-        
-        while(!q.isEmpty()){
-            int[] cur = q.poll();
-            int curi = cur[0];
-            int curj = cur[1];
-            
-            for(int k=0;k<4;k++){
-                int nxti = curi+dx[k];
-                int nxtj = curj+dy[k];
-                if(nxti>=0&&nxti<n&&nxtj>=0&&nxtj<m){
-                    if(maps_int[nxti][nxtj]!=0){
-                        sum += maps_int[nxti][nxtj];
-                        maps_int[nxti][nxtj] = 0;
-                        q.add(new int[]{nxti, nxtj});
-                    }
+        for(int i=0;i<4;i++){
+            int ntx = curx+dx[i];
+            int nty = cury+dy[i];
+            if(ntx>=0&&nty>=0&&ntx<n&&nty<m){
+                if(!visited[ntx][nty]){
+                    visited[ntx][nty] = true;
+                    sum += bfs(ntx, nty, sum);
                 }
             }
         }
         return sum;
+        
+        
     }
     public int[] solution(String[] maps) {
-        ArrayList<Integer> result = new ArrayList<>();
+        
         n = maps.length;
         m = maps[0].length();
-        maps_int = new int[n][m];
+        
+        maps_arr = new int[n][m];
+        visited = new boolean[n][m];
         
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                int value = maps[i].charAt(j)=='X'?0:(maps[i].charAt(j)-'0');
-                maps_int[i][j] = value;
+                if(maps[i].charAt(j)=='X'){
+                    maps_arr[i][j] = -1;
+                    visited[i][j] = true;
+                }
+                else maps_arr[i][j] = (maps[i].charAt(j)-'0');
             }
         }
+        
+        
+        
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(maps_int[i][j]!=0){
-                    result.add(bfs(i,j));
+                if(!visited[i][j]){
+                    visited[i][j] = true;
+                    area.add(bfs(i, j, 0));
                 }
             }
         }
         
-        if(result.size()==0)return new int[]{-1};
-    
-        int[] answer = new int[result.size()];
-        for(int i=0;i<result.size();i++){answer[i] = result.get(i);}
-        Arrays.sort(answer);
+        int[] answer;
+        if(area.size()==0){
+          return new int[]{-1};  
+        } 
         
+        answer = new int[area.size()];
+        
+        Collections.sort(area);
+        for(int i=0;i<answer.length;i++){
+            answer[i] = area.get(i);
+        }
         return answer;
     }
 }
