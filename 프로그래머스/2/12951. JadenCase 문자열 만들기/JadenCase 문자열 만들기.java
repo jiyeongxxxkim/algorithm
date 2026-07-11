@@ -18,8 +18,8 @@ class Solution {
                 answer += String.valueOf(ch).toLowerCase();
             }
             chk = false;
-            
-        }
+        
+        } 
         return answer;
     }
 }
