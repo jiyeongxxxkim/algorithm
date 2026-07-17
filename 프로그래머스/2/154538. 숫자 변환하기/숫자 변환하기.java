@@ -11,7 +11,7 @@ class Solution {
         
         while (!q.isEmpty()) {
             int cur = q.poll();
-            
+              
             // 가능한 3가지 연산 후보
             int[] nextValues = {cur + n, cur * 2, cur * 3};
             
