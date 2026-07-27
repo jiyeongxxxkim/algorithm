@@ -1,7 +1,5 @@
 import java.util.*;
 class Solution {
-    int[] result;
-    int destination;
     ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
     boolean[] visited;
     int[] count;
@@ -23,8 +21,11 @@ class Solution {
         }
     }
     public int[] solution(int n, int[][] roads, int[] sources, int destination) {
-        result = new int[sources.length];
-        this.destination = destination;
+        int[] result = new int[sources.length];
+        count = new int[n+1];
+        visited = new boolean[n+1];
+        for(int i=0;i<=n;i++)count[i] = -1;
+        
         for(int i =0;i<=n;i++){
             graph.add(new ArrayList<Integer>());
         }
@@ -32,19 +33,12 @@ class Solution {
             graph.get(roads[i][0]).add(roads[i][1]);
             graph.get(roads[i][1]).add(roads[i][0]);
         }
+        
+        visited[destination] = true;
+        count[destination] = 0;
+        bfs(destination);
         for(int i=0;i<sources.length;i++){
-            if(sources[i]==destination)result[i] = 0;
-            else{
-                visited = new boolean[n+1];
-                count = new int[n+1];
-                visited[sources[i]] = true;
-                bfs(sources[i]);
-                if(count[destination]==0){
-                    result[i] = -1;
-                }else{
-                    result[i] = count[destination];
-                }
-            }
+            result[i] = count[sources[i]];
         }
         return result;
     }
