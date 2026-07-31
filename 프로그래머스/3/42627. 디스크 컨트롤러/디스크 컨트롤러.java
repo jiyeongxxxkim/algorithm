@@ -8,7 +8,7 @@ class Solution {
             if(a[1]==b[1])return a[0]-b[0];
             return a[1]-b[1];
         });
-        int answer = 0;
+        int answer = 0; 
         int count =0;
         int curtime=0;
         int jobindex = 0;
