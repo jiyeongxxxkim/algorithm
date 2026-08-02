@@ -7,7 +7,7 @@ class Solution {
         });
         int[] parent = new int[n];
         for(int i=0;i<n;i++)parent[i] = i;
-        
+         
         for(int[] cost:costs){
             int min = Math.min(cost[0], cost[1]);
             int max = Math.max(cost[0], cost[1]);
