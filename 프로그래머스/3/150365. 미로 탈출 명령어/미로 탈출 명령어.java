@@ -7,7 +7,7 @@ class Solution {
     
     void dfs(int cx, int cy, int dis, StringBuilder sb){
         if(answer!= null)return;
-          
+           
         int pathdis = Math.abs(cx-r)+Math.abs(cy-c);
         int minus = k-dis;
         if(minus<pathdis||(minus-pathdis)%2!=0)return;
