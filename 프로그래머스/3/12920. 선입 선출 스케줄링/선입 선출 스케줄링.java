@@ -27,7 +27,7 @@ class Solution {
             work += (time-1)/c;
         }
         for(int i=0;i<cores.length;i++){
-            if(time%cores[i]==0){
+            if(time%cores[i]==0){ 
                 work++;
                 if(work==n){
                 return i+1;
