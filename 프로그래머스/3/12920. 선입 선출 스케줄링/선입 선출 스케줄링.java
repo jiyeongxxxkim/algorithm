@@ -11,7 +11,7 @@ class Solution {
         
         while(left<=right){
             long mid = (left+right)/2;
-            long work = cores.length;
+            long work = cores.length;  
             for(int c:cores){
                 work += (mid/c);
             }
