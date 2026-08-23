@@ -5,7 +5,7 @@ class Solution
     {
         Deque<Character> stk = new ArrayDeque<>();
         char[] arr = s.toCharArray();
-        
+         
         for(char ch : arr){
             if(stk.isEmpty()||stk.peek()!=ch){
                 stk.push(ch);
