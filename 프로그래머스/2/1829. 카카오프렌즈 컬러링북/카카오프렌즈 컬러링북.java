@@ -8,7 +8,8 @@ class Solution {
         int[] dc = {0,1,0,-1};
         Queue<int[]> q = new LinkedList<>();
         q.add(start);
-        int count = 0;
+        int count = 1;
+        visited[start[0]][start[1]] = true;
         
         while(!q.isEmpty()){
             int[] cur = q.poll();
