@@ -5,7 +5,7 @@ class Solution {
         int n = points.length+1;
         int m = points[0].length+1;
         List<int[]>[] course = new ArrayList[routes.length];
-        
+         
         for(int i=0;i<routes.length;i++){
             course[i] = new ArrayList<>();
             int start = routes[i][0]-1;
