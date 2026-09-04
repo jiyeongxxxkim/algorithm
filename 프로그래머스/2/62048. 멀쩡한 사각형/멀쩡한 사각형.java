@@ -6,7 +6,7 @@ class Solution {
         return (W * H) - (W + H - gcd(w, h));
     }
     
-    private long gcd(long a, long b) {
+    private long gcd(long a, long b) {  
         while (b != 0) {
             long temp = a % b;
             a = b;
