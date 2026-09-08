@@ -8,7 +8,7 @@ class Solution {
         
         // 0번 스테이지(실제 1번), 현재 누적 비용 0, 힌트 배열 들고 DFS 시작
         dfs(0, 0, hints, cost, hint);
-        
+         
         return minTotalCost;
     }
 
