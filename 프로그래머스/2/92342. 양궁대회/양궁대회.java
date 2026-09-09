@@ -3,7 +3,7 @@ class Solution {
     int[] maxarr = {-1};
     int calscore(int[] r, int[] a){
         int rs = 0;
-        int ra = 0;
+        int ra = 0; 
         for(int i=0;i<11;i++){
             if(r[i]!=0)rs+=(10-i);
             else if(r[i]!=a[i]) ra += (10-i);
