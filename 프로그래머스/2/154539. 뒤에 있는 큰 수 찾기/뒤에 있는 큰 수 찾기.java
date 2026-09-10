@@ -7,7 +7,7 @@ class Solution {
         int index = 0;
         for(int i=0;i<numbers.length;i++){
             int number = numbers[i];
-            while(!stk.isEmpty()&&stk.peek()[0]<number){
+            while(!stk.isEmpty()&&stk.peek()[0]<number){  
                 
                 answer[stk.pop()[1]] = number;
             }
