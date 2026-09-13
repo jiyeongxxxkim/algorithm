@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
 
-class Solution {
+class Solution { 
     public int solution(int k, int[] tangerine) {
         Map<Integer,Integer> hmap = new HashMap<>();
         for(int tan:tangerine){
