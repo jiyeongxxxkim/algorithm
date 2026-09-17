@@ -6,7 +6,7 @@ class Solution {
             if(minr.equals("diamond"))return 5;
             else return 1;
         }else{
-            if(minr.equals("diamond"))return 25;
+            if(minr.equals("diamond"))return 25; 
             else if(minr.equals("iron"))return 5;
             else return 1;
         }
