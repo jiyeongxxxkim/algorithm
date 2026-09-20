@@ -8,7 +8,7 @@ class Solution {
         }
         int[] maxarr = {1,2,3};
         int[] minarr = {2,3,4};
-        
+          
         for(int key:tmap.keySet()){
             if(tmap.get(key)>1){
                 answer += (tmap.get(key)*(tmap.get(key)-1)/2);
