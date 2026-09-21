@@ -7,7 +7,7 @@ class Solution {
             hmap.put(String.valueOf((char)('A' + i)), i+1);
         }
         int mapindex = 27;
-        int index = 0;
+        int index = 0;  
         while(index<msg.length()){
             String w = String.valueOf(msg.charAt(index));
             
