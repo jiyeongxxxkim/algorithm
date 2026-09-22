@@ -7,7 +7,7 @@ class Solution {
         for(int i=0;i<book_time.length;i++){
             String[] b = book_time[i]; 
             
-            
+             
             book[i][0] = Integer.parseInt(b[0].split(":")[0])*60+Integer.parseInt(b[0].split(":")[1]);
             book[i][1] = Integer.parseInt(b[1].split(":")[0])*60+Integer.parseInt(b[1].split(":")[1]);
         }
