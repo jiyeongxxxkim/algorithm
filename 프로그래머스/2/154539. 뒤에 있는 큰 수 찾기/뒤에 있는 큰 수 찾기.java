@@ -9,7 +9,8 @@ class Solution {
             int number = numbers[i];
             while(!stk.isEmpty()&&stk.peek()[0]<number){  
                 
-                answer[stk.pop()[1]] = number;
+                answer[stk.pop()[1]] = number; 
+                
             }
             stk.push(new int[]{number,i});
             
