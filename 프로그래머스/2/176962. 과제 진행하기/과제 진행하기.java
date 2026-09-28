@@ -5,7 +5,7 @@ class Solution {
         String[] planname = new String[plans.length];
         int[][] plantime = new int[plans.length][3];
         String[] answer = new String[plans.length];
-        for(int i=0;i<plans.length;i++){
+        for(int i=0;i<plans.length;i++){ 
             planname[i] = plans[i][0];
             plantime[i][0] = i;  
             plantime[i][1] = Integer.parseInt(plans[i][1].split(":")[0])*60+Integer.parseInt(plans[i][1].split(":")[1]);
