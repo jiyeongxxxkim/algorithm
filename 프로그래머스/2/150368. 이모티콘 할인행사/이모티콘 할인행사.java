@@ -8,7 +8,7 @@ class Solution {
         if(depth==emoticons.length){
             calculator(users, emoticons);
             return;
-        }
+        } 
         for(int i=0;i<4;i++){
             currentDiscounts[depth] = rates[i];
             dfs(users, emoticons, depth+1);
