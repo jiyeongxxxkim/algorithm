@@ -5,7 +5,7 @@ class Solution {
     int[][] q;
     int[] ans;
     void dfs(int start, int depth, int[] arr){
-        if(depth==5){
+        if(depth==5){ 
             if(chk(arr))result++;
             return;
         } 
