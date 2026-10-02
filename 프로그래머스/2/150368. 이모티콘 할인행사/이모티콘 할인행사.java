@@ -1,48 +1,51 @@
 import java.util.*;
 class Solution {
-    int[] currentDiscounts; 
-    int[] rates = {10, 20, 30, 40};
-    int maxPlus = 0;
-    int maxSales = 0;
-    void dfs(int[][] users, int[] emoticons, int depth){
+    int pluscont = 0;
+    int emoticonsales = 0;
+    int[] salepercent = {10,20,30,40};
+    void dfs(int depth, int[][] users, int[] emoticons, int[] percent){
         if(depth==emoticons.length){
-            calculator(users, emoticons);
+            calcul(percent, users, emoticons);
             return;
-        } 
+        }
         for(int i=0;i<4;i++){
-            currentDiscounts[depth] = rates[i];
-            dfs(users, emoticons, depth+1);
+            percent[depth] = salepercent[i];
+            dfs(depth+1, users, emoticons, percent);
         }
     }
-    void calculator(int[][] users, int[] emoticons){
-        int pluscont = 0;
-        int sales = 0;
+    void calcul(int[] percent, int[][] users, int[] emoticons){
+        int temp_pluscont = 0;
+        int temp_emoticonsales =0;
         for(int[] user:users){
-            int discount = user[0];
-            int maxsale = user[1];
             int usersalesum = 0;
-            for(int i=0;i<emoticons.length;i++){
-                if(currentDiscounts[i]>=discount)usersalesum += emoticons[i]*(100-currentDiscounts[i])/100;
+            int userpercent = user[0];
+            int usersalemax = user[1];
+            for(int i=0;i<percent.length;i++){
+                if(userpercent<=percent[i]){
+                    usersalesum += emoticons[i]*(100-percent[i])/100;
+                }
             }
-            if(usersalesum>=maxsale){
-                pluscont++;
-            }else{
-                sales += usersalesum;
-            }
-        }if(maxPlus<pluscont){
-            maxPlus = pluscont;
-            maxSales = sales;
-        }else if(maxPlus==pluscont){
-            maxSales = Math.max(maxSales, sales);
+            if(usersalesum >= usersalemax)temp_pluscont++;
+            else temp_emoticonsales += usersalesum;
         }
+        if(pluscont==temp_pluscont){
+            emoticonsales = Math.max(emoticonsales, temp_emoticonsales);
+        }else if(pluscont<temp_pluscont){
+            pluscont = temp_pluscont;
+            emoticonsales = temp_emoticonsales;
+
+        }
+        
     }
     public int[] solution(int[][] users, int[] emoticons) {
         int[] answer = new int[2];
-        currentDiscounts = new int[emoticons.length]; 
         
-        dfs(users, emoticons, 0);
-        answer[0] = maxPlus;
-        answer[1] = maxSales;
+        int[] percent = new int[emoticons.length];
+        dfs(0, users, emoticons, percent);
+        
+        answer[0] = pluscont;
+        answer[1] = emoticonsales;
+        
         return answer;
     }
 }
