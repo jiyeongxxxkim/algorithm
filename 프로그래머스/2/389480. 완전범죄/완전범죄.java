@@ -3,7 +3,7 @@ class Solution {
     public int solution(int[][] info, int n, int m) {
         int answer = 0;
         int[] dp = new int[n];
-        Arrays.fill(dp, 999999);
+        Arrays.fill(dp, 999999); 
         dp[0] = 0;
         for(int[] ins:info){
             int afill = ins[0];
