@@ -2,7 +2,7 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] fees, String[] records) {
         TreeMap<Integer, int[]> hmap = new TreeMap<>();
-        int maxtime = 60*23+59;
+        int maxtime = 60*23+59; 
         ArrayList<Integer> result = new ArrayList<>();
         for(String record:records){
             String[] carrecord = record.split(" ");
