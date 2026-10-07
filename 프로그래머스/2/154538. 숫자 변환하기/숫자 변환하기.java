@@ -5,7 +5,7 @@ class Solution {
         if (x == y) return 0;
         
         int[] visited = new int[y + 1];
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>(); 
         
         q.add(x);
         
