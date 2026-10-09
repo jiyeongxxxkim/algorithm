@@ -1,76 +1,67 @@
 import java.util.*;
 class Solution {
-    boolean[][] pillar;
-    boolean[][] beam;
     int n;
-    boolean pchk(int x, int y){
-        if(x>0&&beam[x-1][y])return true;
-        if(beam[x][y])return true;
-        if(y==0)return true;
-        if(y>0&&pillar[x][y-1])return true;
-        return false;
-    }
-    boolean bchk(int x, int y){
-        if(y>0&&pillar[x][y-1])return true;
-        if(y>0&&pillar[x+1][y-1])return true;
-        if(x>0&&beam[x-1][y]&&beam[x+1][y])return true;
-        return false;
-    }
-    boolean allchk(){
-        for(int i=0;i<=n;i++){
-            for(int j=0;j<=n;j++){
-                if(pillar[i][j]&&!pchk(i,j))return false;
-                if(beam[i][j]&&!bchk(i,j))return false;
+    boolean buildchk(boolean[][]kd, boolean[][]bo){
+        for(int x=0;x<=n;x++){
+            for(int y=0;y<=n;y++){
+                if(kd[x][y]){
+                    if(!kdchk(x,y, kd, bo))return false;
+                }
+                if(bo[x][y]){
+                    if(!bochk(x,y,kd,bo))return false;
+                }
             }
         }
         return true;
     }
+    boolean kdchk(int x, int y, boolean[][] kd, boolean[][] bo){
+        if (y == 0) return true;
+        if (y > 0 && kd[x][y - 1]) return true;
+        if (bo[x][y] || (x > 0 && bo[x - 1][y])) return true;
+        return false;
+    }
+    boolean bochk(int x, int y, boolean[][]kd, boolean[][]bo){
+        if (y > 0 && kd[x][y - 1]) return true;
+        if (x < n && y > 0 && kd[x + 1][y - 1]) return true;
+        if (x > 0 && x < n && bo[x - 1][y] && bo[x + 1][y]) return true;
+        return false;
+    }
     public int[][] solution(int n, int[][] build_frame) {
-        
-        this.n=n;
-        pillar = new boolean[n+2][n+2];
-        beam = new boolean[n+2][n+2];
-        
+        this.n = n;
+        boolean[][] kd = new boolean[n+1][n+1];
+        boolean[][] bo = new boolean[n+1][n+1];
+        int x=-1, y=-1;
+        int type = -1, op = -1;
+        boolean stepchk = true;
         for(int[] build:build_frame){
-            if(build[2]==0){
-                if(build[3]==1){
-                    pillar[build[0]][build[1]]=true;
-                    if(!allchk())pillar[build[0]][build[1]]=false;
-                }else{
-                    pillar[build[0]][build[1]]=false;
-                    if(!allchk())pillar[build[0]][build[1]]=true;
+            x = build[0];
+            y = build[1];
+            type = build[2];
+            op = build[3];
+            if (type == 0) {
+                kd[x][y] = (op == 1);
+                if (!buildchk(kd, bo)) {
+                    kd[x][y] = (op == 0);
                 }
-            }else{
-                if(build[3]==1){
-                    beam[build[0]][build[1]]=true;
-                    if(!allchk())beam[build[0]][build[1]]=false;
-                }else{
-                    beam[build[0]][build[1]]=false;
-                    if(!allchk())beam[build[0]][build[1]]=true;
+            } else {
+                bo[x][y] = (op == 1);
+                if (!buildchk(kd, bo)) {
+                    bo[x][y] = (op == 0);
                 }
             }
         }
-        ArrayList<int[]> result = new ArrayList<>();
-        for(int i=0;i<n+1;i++){
-            for(int j=0;j<n+1;j++){
-                if(pillar[i][j])result.add(new int[]{i,j,0});
-                if(beam[i][j])result.add(new int[]{i,j,1});
+        ArrayList<int[]> arr = new ArrayList<>();
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<=n;j++){
+                if(kd[i][j])arr.add(new int[]{i, j, 0});
+                if(bo[i][j])arr.add(new int[]{i, j, 1});
             }
         }
-        result.sort((a, b) -> {
-            if (a[0] == b[0]) {
-                if (a[1] == b[1]) {
-                    return a[2] - b[2];
-                }
-                return a[1] - b[1];
-            }
-            return a[0] - b[0];
-        });
+        int[][] answer = new int[arr.size()][3];
+        for(int i=0;i<arr.size();i++){
+            answer[i] = arr.get(i);
+        }
         
-        int[][] answer = new int[result.size()][3];
-        for (int i = 0; i < result.size(); i++) {
-            answer[i] = result.get(i);
-        }
         return answer;
     }
 }
