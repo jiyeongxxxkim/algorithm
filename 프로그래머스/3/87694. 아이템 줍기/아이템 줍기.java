@@ -7,7 +7,7 @@ class Solution {
     static int[][] count;
     public void bfs(int[] ch){
         Queue<int[]> q = new LinkedList<>();
-        
+         
         int[] dx = {1,0,-1,0};
         int[] dy = {0,1,0,-1};
         
