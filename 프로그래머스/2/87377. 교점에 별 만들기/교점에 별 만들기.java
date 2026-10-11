@@ -8,7 +8,7 @@ class Solution {
         long minX = Long.MAX_VALUE;
         long maxX = Long.MIN_VALUE; 
         long minY = Long.MAX_VALUE;
-        long maxY = Long.MIN_VALUE;
+        long maxY = Long.MIN_VALUE; 
         
         // 1. 이중 for문을 돌며 모든 직선의 짝을 맞춰 교점 찾기
         for (int i = 0; i < line.length; i++) {
