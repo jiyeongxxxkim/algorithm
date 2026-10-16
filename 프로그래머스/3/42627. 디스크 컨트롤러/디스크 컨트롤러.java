@@ -10,7 +10,7 @@ class Solution {
         });
         int answer = 0;  
         int count =0;
-        int curtime=0;
+        int curtime=0; 
         int jobindex = 0;
         while(count<jobs.length){
             while(jobindex<jobs.length&&jobs[jobindex][0]<=curtime)pq.add(jobs[jobindex++]);
