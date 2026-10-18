@@ -2,7 +2,7 @@ import java.util.*;
 class Solution {
     public int solution(int[][] scores) {
         int ya = scores[0][0];
-        int yb = scores[0][1];
+        int yb = scores[0][1]; 
         int answer = 1;
         
         Arrays.sort(scores, (a,b)->{
