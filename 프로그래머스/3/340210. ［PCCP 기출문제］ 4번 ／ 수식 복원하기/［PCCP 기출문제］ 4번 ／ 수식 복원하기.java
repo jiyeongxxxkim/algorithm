@@ -48,11 +48,10 @@ class Solution {
             }
         }
 
-        StringBuilder sb;
+        String strresult = "";
         int idx = 0;
         for(String ex:expressions){
             if(!ex.contains("X"))continue;
-            sb = new StringBuilder();
             int baseresult = -1;
             String calresult = "";
             boolean chk = true;
@@ -60,7 +59,6 @@ class Solution {
             String a = sp[0];
             String b = sp[2];
             String op = sp[1];
-            sb.append(a).append(" ").append(op).append(" ").append(b).append(" = ");
             for(int i=2;i<10;i++){
                 if(!base[i])continue;
                 baseresult = i;
@@ -72,7 +70,7 @@ class Solution {
                     if(calresult.equals(""))calresult = Integer.toString((inta+intb), i);
                     else{
                         if(!Integer.toString((inta+intb), i).equals(calresult)){
-                            sb.append("?");
+                            strresult = ex.replace("X","?");
                             chk = false;
                             break;
                         }
@@ -81,16 +79,16 @@ class Solution {
                     if(calresult.equals(""))calresult = Integer.toString((inta-intb), i);
                     else{
                         if(!Integer.toString((inta-intb), i).equals(calresult)){
-                            sb.append("?");
+                            strresult = ex.replace("X","?");
                             chk = false;
                             break;
                         }
                     }
                 }
             }
-            if(chk)sb.append(calresult);
+            if(chk)strresult = ex.replace("X",calresult);
             
-            answer[idx++] = sb.toString();
+            answer[idx++] = strresult;
         }
         
         
