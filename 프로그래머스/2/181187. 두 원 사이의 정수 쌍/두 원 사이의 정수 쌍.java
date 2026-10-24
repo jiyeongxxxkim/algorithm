@@ -8,7 +8,7 @@ class Solution {
             long ipow = (long)Math.pow(i,2);
             long maxy = (long)Math.floor(Math.sqrt(r2pow-ipow));
             long miny = 0;
-            if(i<r1){
+            if(i<r1){ 
                 miny = (long)Math.ceil(Math.sqrt(r1pow-ipow));
             }
             answer += (maxy - miny + 1);
