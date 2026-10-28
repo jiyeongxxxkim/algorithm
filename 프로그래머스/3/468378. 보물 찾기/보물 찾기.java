@@ -6,7 +6,7 @@ class Solution {
         //     if (excavate.apply(i) == 0) System.out.println(i);
         int n = depth.length;
         int[][] dp = new int[n+2][n+2];
-        int[][] opt = new int[n+2][n+2];
+        int[][] opt = new int[n+2][n+2]; 
         
         for(int i=1;i<=n;i++){
             dp[i][i] = depth[i-1];
