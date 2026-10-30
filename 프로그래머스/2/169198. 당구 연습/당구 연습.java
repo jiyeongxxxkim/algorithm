@@ -6,7 +6,7 @@ class Solution {
         
         fpoint[0][1] = n+(n-ball[1]);
         fpoint[1][0] = m+(m-ball[0]);
-        fpoint[2][1] = -1*ball[1];
+        fpoint[2][1] = -1*ball[1]; 
         fpoint[3][0] = -1*ball[0];
 
         return fpoint;
@@ -35,9 +35,6 @@ class Solution {
             }    
             answer[i] = min;
         }
-        
-        
-        
         
         return answer;
     }
