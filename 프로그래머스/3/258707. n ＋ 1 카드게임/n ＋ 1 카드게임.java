@@ -4,11 +4,11 @@ class Solution {
     Set<Integer> oset;
     Set<Integer> pset;
     int hap;
-    boolean ochk(){
+    boolean ochk(){ 
         for(int o:oset){
             if(oset.contains(hap-o)){
                 oset.remove(o);
-                oset.remove(hap-o);
+                oset.remove(hap-o); 
                 return true;
             }
         }return false;
