@@ -4,7 +4,7 @@ class Solution {
     int[][] list;
     int[] percent;
     void dfscombo(int n, int depth, int st, int[] arr){
-        if(depth==n/2){
+        if(depth==n/2){ 
             combo.add(arr.clone());
             return;
         }
