@@ -44,7 +44,7 @@ class Solution {
         
         // 현재 노드의 자식 노드들을 다음 방문 후보에 추가
         for (int child : tree.get(currentNode)) {
-            next.add(child);
+            next.add(child); 
         }
         
         // 갈 수 있는 모든 후보 노드들에 대해 DFS 재귀 호출
