@@ -3,7 +3,7 @@ class Solution {
     public int solution(int[] topping) {
         Set<Integer> hset = new HashSet<>();
         Map<Integer, Integer> hmap = new HashMap<>();
-         int answer = 0;
+         int answer = 0; 
         
         for(int top:topping)hmap.put(top, hmap.getOrDefault(top,0)+1);
         
