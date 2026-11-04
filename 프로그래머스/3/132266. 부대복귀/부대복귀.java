@@ -3,7 +3,7 @@ class Solution {
     ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
     boolean[] visited;
     int[] count;
-    void bfs(int start){
+    void bfs(int start){ 
         
         Queue<Integer> q = new LinkedList<>();
         q.add(start);
