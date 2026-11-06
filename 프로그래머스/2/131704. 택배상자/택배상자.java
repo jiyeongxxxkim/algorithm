@@ -6,7 +6,7 @@ class Solution {
 
         for (int i = 1; i <= order.length; i++) {
             q.add(i);
-        }
+        } 
         int count = 0;
         while (!q.isEmpty()&&count<order.length) {
             if(q.peek()==order[count]) {
