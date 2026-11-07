@@ -1,6 +1,6 @@
 import java.util.*;
 class Solution {
-    public int solution(int[] order) {
+    public int solution(int[] order) { 
         Queue<Integer> q = new LinkedList<>();
         Deque<Integer> dq = new ArrayDeque<>();
 
