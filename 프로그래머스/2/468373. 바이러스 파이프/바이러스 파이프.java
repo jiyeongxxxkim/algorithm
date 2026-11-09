@@ -8,7 +8,7 @@ class Solution {
         if(depth==k){
             course.add(arr.clone());
             return;
-        }
+        } 
         for(int i=1;i<4;i++){
             if(arr[depth-1]!=i){
                 arr[depth] = i;
