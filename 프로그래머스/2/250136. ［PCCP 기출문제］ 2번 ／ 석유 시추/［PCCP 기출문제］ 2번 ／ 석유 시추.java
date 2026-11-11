@@ -10,7 +10,7 @@ class Solution {
         Queue<int[]> q = new LinkedList<>();
         q.add(new int[]{stx, sty});
         visited[stx][sty] = true;
-        int size = 0;
+        int size = 0; 
         Set<Integer> cols = new HashSet<>();
         while(!q.isEmpty()){
             int[] cur = q.poll();
