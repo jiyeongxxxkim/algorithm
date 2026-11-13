@@ -48,5 +48,5 @@ class Solution {
             answer = Math.max(answer, sum);
         } 
         return answer;
-    }
+    } 
 }
