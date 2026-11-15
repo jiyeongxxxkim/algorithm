@@ -6,7 +6,7 @@ class Solution {
     int[] oilSum;
     void bfs(int stx, int sty){
         int[] dx = {1,0,-1,0};
-        int[] dy = {0,1,0,-1};
+        int[] dy = {0,1,0,-1}; 
         Queue<int[]> q = new LinkedList<>();
         q.add(new int[]{stx, sty});
         visited[stx][sty] = true;
