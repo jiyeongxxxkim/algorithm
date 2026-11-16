@@ -5,7 +5,7 @@ class Solution {
         long r1pow = (long)Math.pow(r1,2);
         long r2pow = (long)Math.pow(r2,2);
         for(int i=1;i<=r2;i++){
-            long ipow = (long)Math.pow(i,2);
+            long ipow = (long)Math.pow(i,2); 
             long maxy = (long)Math.floor(Math.sqrt(r2pow-ipow));
             long miny = 0;
             if(i<r1){ 
