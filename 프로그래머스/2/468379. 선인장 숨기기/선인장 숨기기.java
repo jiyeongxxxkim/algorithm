@@ -5,7 +5,7 @@ class Solution {
         Arrays.fill(prefix, 0);
         for (int i = 0; i < mid; i++) {
             int r = drops[i][0];
-            int c = drops[i][1]; 
+            int c = drops[i][1];  
             prefix[r * n + c] = 1;
         }
         for (int r = 0; r < m; r++) {
