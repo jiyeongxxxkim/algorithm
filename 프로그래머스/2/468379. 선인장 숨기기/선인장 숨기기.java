@@ -4,7 +4,7 @@ class Solution {
     boolean check(int m, int n, int h, int w, int[][] drops, int mid, int[] prefix) {
         Arrays.fill(prefix, 0);
         for (int i = 0; i < mid; i++) {
-            int r = drops[i][0];
+            int r = drops[i][0];  
             int c = drops[i][1];  
             prefix[r * n + c] = 1;
         }
