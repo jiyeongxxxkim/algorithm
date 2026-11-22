@@ -2,7 +2,7 @@ import java.util.*;
 class Solution {
     int[] result = new int[2];
     boolean check(int m, int n, int h, int w, int[][] drops, int mid, int[] prefix) {
-        Arrays.fill(prefix, 0);
+        Arrays.fill(prefix, 0); 
         for (int i = 0; i < mid; i++) {
             int r = drops[i][0];  
             int c = drops[i][1];  
