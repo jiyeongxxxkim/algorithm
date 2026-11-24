@@ -6,7 +6,7 @@ class Solution {
         Queue<Integer> q = new LinkedList<>();
         q.add(start);
         int count  = 1;
-        visited[start] = true;
+        visited[start] = true;  
         while(!q.isEmpty()){
             int cur = q.poll();
             for(int i:graph.get(cur)){
