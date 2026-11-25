@@ -7,7 +7,7 @@ class Solution {
     }
     long change(String n, int idx){
         StringBuilder sb = new StringBuilder();
-        for(int i=0;i<n.length();i++){
+        for(int i=0;i<n.length();i++){  
             if(i==(n.length()-idx-1))sb.append("1");
             else if(i==(n.length()-idx))sb.append("0");
             else sb.append(n.charAt(i));
