@@ -8,7 +8,7 @@ class Solution {
                 stk.push(ch);
             }else{
                 if(stk.isEmpty())return false;
-                char popch = stk.pop();
+                char popch = stk.pop();  
                 if(ch==')'&&popch!='(')return false;
                 if(ch=='}'&&popch!='{')return false;
                 if(ch==']'&&popch!='[')return false;
