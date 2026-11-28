@@ -7,7 +7,7 @@ class Solution {
             if(ch=='('||ch=='{'||ch=='['){
                 stk.push(ch);
             }else{
-                if(stk.isEmpty())return false;
+                if(stk.isEmpty())return false;  
                 char popch = stk.pop();  
                 if(ch==')'&&popch!='(')return false;
                 if(ch=='}'&&popch!='{')return false;
